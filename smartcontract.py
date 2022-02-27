@@ -37,6 +37,7 @@ bytecode = compiled_sol['contracts']['Greeter.sol']['Greeter']['evm']['bytecode'
 abi = json.loads(compiled_sol['contracts']['Greeter.sol']['Greeter']['metadata'])['output']['abi']
 W3 = Web3(WebsocketProvider('wss://ropsten.infura.io/ws/v3/%s'%infuraKey))
 account1=Account.from_key(privateKey);
+print ("Account Created")
 address1=account1.address
 Greeter = W3.eth.contract(abi=abi, bytecode=bytecode)
 
